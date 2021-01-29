@@ -52,16 +52,18 @@ def calculate_shipping():
     if request.method == 'POST':
         json_data = request.get_json()
         shipment_values = []
+        # Zen Of Python - Beautiful is better than ugly.
         for shipping_company in shipping_companies['transportadoras']:
             if json_data['dimensao']['altura'] < shipping_company['altura_maxima']:
                 if json_data['dimensao']['altura'] > shipping_company['altura_minima']:
+                    # Verifica a largura
                     if json_data['dimensao']['largura'] < shipping_company['largura_maxima']:
                         if json_data['dimensao']['largura'] > shipping_company['largura_minima']:
+                            # Calcula o valor do frete
                             valor = (json_data['peso'] * shipping_company['valor_frete']) / 10
                             shipment_values.append(
                                 {'nome': 'Entrega ' + shipping_company['nome'], 'valor_frete': valor,
                                  'prazo_dias': shipping_company['prazo_entrega']})
-
         return jsonify(shipment_values)
 
 
