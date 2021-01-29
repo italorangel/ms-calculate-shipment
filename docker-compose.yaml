@@ -1,0 +1,11 @@
+services:
+  ms-calculate-shipping:
+    image: ms-calculate-shipping
+    build:
+      dockerfile: Dockerfile
+      context: .
+    expose: 
+      - 5000
+    command: ["/bin/sh", "entrypoint.sh"]
+    ports: 
+      - 5000:5000

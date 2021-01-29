@@ -1,0 +1,18 @@
+{ "transportadoras":[{
+        "nome": "Ninja",
+        "altura_minima": 10,
+        "altura_maxima": 200,
+        "largura_minima": 6,
+        "largura_maxima": 140,
+        "prazo_entrega": 6,
+        "valor_frete": 0.3
+    },{
+        "nome": "KaBuM",
+        "altura_minima": 10,
+        "altura_maxima": 200,
+        "largura_minima": 6,
+        "largura_maxima": 140,
+        "prazo_entrega": 6,
+        "valor_frete": 0.2
+    }]
+}
